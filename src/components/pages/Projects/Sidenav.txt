@@ -1,0 +1,190 @@
+<div className="projects">
+        <div className={active ? 'project active' : 'project'} style={{
+            backgroundImage: `url('/images/${display}.jpg')`
+        }}>
+        {display === 'work' ? <h3>My projects</h3> :
+        <Link to={`/${display}`} className="sidenav-links">
+        Click here to see more...
+        </Link>}
+            
+        </div>
+
+        <nav className="sidenav">
+            <div className="menu-icon" onClick={handleClick}>
+            <i className={click ? 'fas fa-times' : 'fas fa-bars'}/>
+            </div>
+            <div className={click ? 'sidenav-menu active' : 'sidenav-menu'}>
+        <button id="investment_calculator" className="sidenav-links" onClick={closeMobileMenu}>
+        Investment Calculator
+        </button>
+        <button id="userApp" className="sidenav-links" onClick={closeMobileMenu}>
+        User App
+        </button>
+        <button id="expenseApp" className="sidenav-links" onClick={closeMobileMenu}> 
+        Expense App
+        </button>
+        </div>
+        </nav>
+        </div>
+        </>
+
+        .projects {
+            margin-left: 200px;
+            position: relative;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .project {
+          left: 200px;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          overflow: hidden;
+          margin: 0 auto;
+          position: absolute;
+         background-repeat: no-repeat;
+         background-size: cover;
+        
+        }
+        
+        .project.active {
+          background-position: center;
+          background-size: 75%;
+          background-color: black;
+          left: 200px;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: 0 auto;
+          position: absolute;
+          size: fill;
+        }
+        
+        .sidenav {
+            background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+            height: 100%;
+            width: 200px;
+            font-size: 1.2rem;
+            position: fixed;
+            left: 0;
+            overflow-x:hidden;
+            padding-top: 200px;
+            transition: 0.5s; 
+          }
+          
+          .sidenav-item {
+            height: 80px;
+          }
+          
+          .sidenav-links {
+            color: #fff;
+            background-color: transparent;
+            display: block;
+            text-decoration: none;
+            padding: 6px 6px 6px 32px;
+            font-size: 25px;
+            text-align: center;
+          }
+          
+        
+          
+          .sidenav-links:hover {
+            border-bottom: 4px solid #fff;
+            transition: all 0.2s ease-out;
+          }
+          
+          .fa-bars {
+            color: #fff;
+          }
+          
+          .sidenav-links-mobile {
+            display: none;
+          }
+          
+          .menu-icon {
+            display: none;
+          }
+          
+          @media screen and (max-width: 960px) {
+            .NavbarItems {
+              position: relative;
+            }
+          
+            .sidenav-menu {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              height: 90vh;
+              position: absolute;
+              top: 80px;
+              left: -100%;
+              opacity: 1;
+              transition: all 0.5s ease;
+            }
+          
+            .sidenav-menu.active {
+              background: #242222;
+              left: 0;
+              opacity: 1;
+              transition: all 0.5s ease;
+              z-index: 1;
+            }
+          
+            .sidenav-links {
+              text-align: center;
+              padding: 2rem;
+              width: 100%;
+              display: table;
+            }
+          
+            .sidenav-links:hover {
+              background-color: #fff;
+              color: #242424;
+              border-radius: 0;
+            }
+          
+            .sidenavbar-logo {
+              position: absolute;
+              top: 0;
+              left: 0;
+              transform: translate(25%, 50%);
+            }
+          
+            .menu-icon {
+              display: block;
+              position: absolute;
+              top: 0;
+              right: 0;
+              transform: translate(-100%, 60%);
+              font-size: 1.8rem;
+              cursor: pointer;
+            }
+          
+            .fa-times {
+              color: #fff;
+              font-size: 2rem;
+            }
+          
+            .sidenav-links-mobile {
+              display: block;
+              text-align: center;
+              margin: 2rem auto;
+              border-radius: 4px;
+              width: 80%;
+              text-decoration: none;
+              font-size: 1.5rem;
+              background-color: transparent;
+              color: #fff;
+              padding: 14px 20px;
+              border: 1px solid #fff;
+              transition: all 0.3s ease-out;
+            }
+          
+            .sidenav-links-mobile:hover {
+              background: #fff;
+              color: #242424;
+              transition: 250ms;
+            }
+          }
